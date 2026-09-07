@@ -1,0 +1,101 @@
+import {
+  Api,
+  Application,
+  BatteryFull,
+  Building,
+  Camera,
+  Car,
+  ChartLine,
+  Chip,
+  Cloud,
+  Cube,
+  DataBase,
+  Document,
+  Flash,
+  Light,
+  MailAll,
+  Mobile,
+  Network_1,
+  Notification,
+  Rocket,
+  Router,
+  Satellite,
+  Screen,
+  Search,
+  Security,
+  ServerProxy,
+  Settings,
+  Sun,
+  Temperature,
+  User,
+  Watsonx,
+  Windy,
+} from "@carbon/icons-react";
+import { getProfile, profiles } from "./assets";
+
+const icons = {
+  api: Api,
+  server: ServerProxy,
+  database: DataBase,
+  cloud: Cloud,
+  auth: Security,
+  firewall: Security,
+  mobile: Mobile,
+  web: Application,
+  browser: Screen,
+  user: User,
+  child: User,
+  teen: User,
+  adult: User,
+  older: User,
+  astronaut: User,
+  suit: User,
+  sun: Sun,
+  heat: Temperature,
+  rocket: Rocket,
+  spacecraft: Rocket,
+  satellite: Satellite,
+  station: Satellite,
+  planet: Sun,
+  moon: Sun,
+  battery: BatteryFull,
+  solar: Sun,
+  generator: Flash,
+  wind: Windy,
+  vehicle: Car,
+  building: Building,
+  room: Building,
+  camera: Camera,
+  router: Router,
+  gateway: Router,
+  balancer: Network_1,
+  queue: Network_1,
+  cache: DataBase,
+  storage: DataBase,
+  backup: DataBase,
+  email: MailAll,
+  notification: Notification,
+  llm: Watsonx,
+  search: Search,
+  monitor: ChartLine,
+  sensor: Chip,
+  light: Light,
+  label: Document,
+  scheduler: Settings,
+  payment: Application,
+};
+export function AssetIcon({
+  asset,
+  size = 28,
+}: {
+  asset: string;
+  size?: number;
+}) {
+  const Icon =
+    icons[asset as keyof typeof icons] ??
+    (getProfile(asset) === profiles.equipment ||
+    getProfile(asset) === profiles.flow
+      ? Settings
+      : Cube);
+  return <Icon size={size} aria-hidden="true" />;
+}

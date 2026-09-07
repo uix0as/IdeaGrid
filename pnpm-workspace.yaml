@@ -1,0 +1,39 @@
+packages:
+  - .
+confirmModulesPurge: false
+allowBuilds:
+  '@carbon/colors': false
+  '@carbon/feature-flags': false
+  '@carbon/grid': false
+  '@carbon/icon-helpers': false
+  '@carbon/icons-react': false
+  '@carbon/layout': false
+  '@carbon/motion': false
+  '@carbon/react': false
+  '@carbon/styles': false
+  '@carbon/themes': false
+  '@carbon/type': false
+  '@carbon/utilities': false
+  '@ibm/plex': false
+  '@ibm/plex-mono': false
+  '@ibm/plex-sans': false
+  '@ibm/plex-sans-arabic': false
+  '@ibm/plex-sans-devanagari': false
+  '@ibm/plex-sans-hebrew': false
+  '@ibm/plex-sans-thai': false
+  '@ibm/plex-sans-thai-looped': false
+  '@ibm/plex-serif': false
+  '@parcel/watcher': true
+  esbuild: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@next/env@16.3.4'
+  - '@next/swc-darwin-arm64@16.3.4'
+  - '@next/swc-darwin-x64@16.3.4'
+  - '@next/swc-linux-arm64-gnu@16.3.4'
+  - '@next/swc-linux-arm64-musl@16.3.4'
+  - '@next/swc-linux-x64-gnu@16.3.4'
+  - '@next/swc-linux-x64-musl@16.3.4'
+  - '@next/swc-win32-arm64-msvc@16.3.4'
+  - '@next/swc-win32-x64-msvc@16.3.4'
+  - next@16.3.4

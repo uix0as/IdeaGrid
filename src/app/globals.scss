@@ -1,0 +1,163 @@
+// Fontsource에서 필요한 IBM Plex Sans/Mono만 로드하므로 Carbon의 전체 Plex
+// @font-face 생성을 끈다. 이렇게 하면 사용하지 않는 Serif 분할 폰트 경로를
+// 번들러가 해석하지 않는다.
+@use "@carbon/react" with (
+  $css--font-face: false
+);
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cds-background);
+  color: var(--cds-text-primary);
+}
+
+code,
+pre {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.app-content {
+  min-height: 100vh;
+  padding: 6rem 1rem 3rem;
+}
+
+.foundation-page {
+  max-width: 99rem;
+  margin: 0 auto;
+}
+
+.foundation-page__hero {
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--cds-border-subtle-01);
+  padding-top: 2rem;
+}
+
+.foundation-page__eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--cds-text-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.foundation-page h1 {
+  max-width: 58rem;
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.foundation-page__description {
+  max-width: 48rem;
+  margin: 0 0 1.5rem;
+  color: var(--cds-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.foundation-page__status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.foundation-page__grid {
+  row-gap: 1rem;
+}
+
+.foundation-page__tile {
+  min-height: 12rem;
+  border-top: 3px solid var(--cds-border-interactive);
+}
+
+.foundation-page__tile h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.foundation-page__tile p {
+  color: var(--cds-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 41.98rem) {
+  .cds--header__nav {
+    display: none;
+  }
+
+  .app-content {
+    padding-top: 5rem;
+  }
+}
+
+.workspace-create { display: flex; gap: 16px; align-items: end; max-width: 700px; margin: 24px 0 48px; }
+.workspace-view { flex: 1; min-width: 260px; display: flex; flex-direction: column; }.workspace-view > .workspace-tabs { margin: 0; }.workspace-3d { flex: 1; display: flex; flex-direction: column; min-height: 360px; }.workspace-3d-host { flex: 1; min-height: 300px; overflow: hidden; }.workspace-3d-help { padding: 0 12px; }.workspace-3d .workspace-canvas-tools { flex-wrap: wrap; }
+.workspace-projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+.app-content:has(.workspace-editor) { padding: 48px 0 0; }
+.workspace-editor { height: calc(100vh - 48px); display: flex; flex-direction: column; background: #161616; }
+.workspace-top, .workspace-toolbar, .workspace-brief { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #393939; }
+.workspace-top .cds--form-item { flex: 0 1 240px; }
+.workspace-top > span { font-size: 12px; color: #a8a8a8; margin-right: auto; }
+.workspace-brief > .cds--form-item { flex: 1; min-width: 240px; }
+.workspace-toolbar { padding: 8px 16px; font-size: 12px; }
+.workspace-toolbar > span { flex: 1; }
+.workspace-editor select, .workspace-inspector input { color: #f4f4f4; background: #262626; border: 1px solid #525252; padding: 8px; width: 100%; }
+.workspace-editor label { display: block; font-size: 12px; }
+.workspace-body { display: flex; flex: 1; min-height: 350px; overflow: hidden; }
+.workspace-library { width: 250px; flex-shrink: 0; border-right: 1px solid #393939; padding: 16px; overflow: auto; }
+.workspace-context { width: 300px; flex-shrink: 0; border-left: 1px solid #393939; padding: 16px; overflow: auto; }
+.workspace-body h2 { font-size: 18px; margin-bottom: 16px; }.workspace-body h3 { font-size: 15px; margin: 20px 0 10px; }
+.workspace-body p { font-size: 13px; line-height: 1.6; margin: 10px 0; color: #c6c6c6; }
+.workspace-assets { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.workspace-assets button { min-height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; color: #f4f4f4; background: #262626; border: 1px solid #393939; cursor: grab; }
+.workspace-assets button:hover { border-color: #78a9ff; }.workspace-assets small { color: #a8a8a8; }
+.workspace-assets button > span { color: #78a9ff; font-family: monospace; }
+.workspace-outline { display: block; width: 100%; text-align: left; background: #262626; color: white; padding: 10px; border: 1px solid #393939; cursor: pointer; }
+.workspace-outline[aria-pressed=true] { border-color: #78a9ff; }
+.workspace-canvas-section { flex: 1; min-width: 260px; display: flex; flex-direction: column; background: #121619; }
+.workspace-canvas-tools { display: flex; gap: 16px; align-items: center; padding: 10px; font-size: 12px; border-bottom: 1px solid #393939; }
+.workspace-canvas-tools label { display: flex; align-items: center; }.workspace-canvas-tools button { color: #fff; background: #393939; border: 0; padding: 6px; }
+.workspace-canvas-scroll { overflow: auto; flex: 1; }
+.workspace-canvas { position: relative; background-image: linear-gradient(#273036 1px, transparent 1px), linear-gradient(90deg, #273036 1px, transparent 1px); background-size: 40px 40px; }
+.workspace-links { position: absolute; top: 0; left: 0; pointer-events: none; }
+.workspace-object { position: absolute; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; width: 90px; min-height: 70px; border: 1px solid #697077; background: #21272a; color: #f4f4f4; cursor: move; touch-action: none; transform-origin: top left; font-size: 12px; padding: 6px; }
+.workspace-symbol { display: grid; place-items: center; width: 32px; height: 28px; background: #0043ce; color: white; font-family: monospace; }.workspace-symbol.round { border-radius: 50%; background: #8a3800; }
+.workspace-object.is-selected { outline: 2px solid #78a9ff; }.workspace-object.is-highlighted { outline: 3px dashed #f1c21b; }
+.workspace-empty { position: absolute; left: 80px; top: 160px; max-width: 400px; pointer-events: none; }
+.workspace-tabs { display: flex; margin-bottom: 20px; }.workspace-inspector { display: grid; gap: 12px; }.workspace-inspector fieldset { padding: 12px; border: 1px solid #525252; }.workspace-inspector fieldset label { margin-bottom: 8px; }
+.workspace-finding { padding: 12px; border-left: 3px solid #f1c21b; background: #262626; margin: 12px 0; }.workspace-finding summary { cursor: pointer; line-height: 1.5; }
+.workspace-suggestions { padding: 16px; background: #002d9c; }.workspace-suggestions p { margin-bottom: 8px; }
+@media (max-width: 900px) { .workspace-body { overflow: auto; }.workspace-library { width: 190px; }.workspace-context { width: 240px; }.workspace-canvas-section { min-width: 450px; }.workspace-editor { height: auto; min-height: calc(100vh - 48px); }.workspace-body { min-height: 650px; }.workspace-canvas-scroll { height: 600px; } }
+.workspace-report { max-width: 960px; margin: 2rem auto; padding: 2rem; }
+.workspace-capability p { line-height: 1.5; }
+.workspace-view { position: relative; }
+.workspace-influence { position: absolute; z-index: 3; top: 145px; right: 8px; width: min(280px, 80%); padding: 10px 12px; border: 1px solid #525252; background: #202125f5; max-height: 260px; overflow: auto; font-size: 12px; line-height: 1.5; }
+.workspace-influence button { color: #f4f4f4; background: #393939; border: 1px solid #6f6f6f; padding: 6px; cursor: pointer; }
+.workspace-influence a { color: #78a9ff; }.workspace-influence p { margin: 8px 0; }
+.workspace-recommendations { display: flex; gap: 8px; overflow-x: auto; padding-top: 8px; }
+.workspace-recommendations button { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 150px; max-width: 200px; text-align: left; }
+.workspace-recommendations small { line-height: 1.4; color: #c6c6c6; }
+.workspace-solar-beam { animation: solar-flow 1s linear infinite; } @keyframes solar-flow { to { stroke-dashoffset: -40; } }
+@media (prefers-reduced-motion: reduce) { .workspace-solar-beam { animation: none; } }
+.workspace-report h1, .workspace-report h2, .workspace-report h3 { margin: 1.5rem 0 1rem; }
+.workspace-report p, .workspace-report li { margin-bottom: 1rem; line-height: 1.6; }
+.workspace-report button { margin: 1rem 1rem 1rem 0; padding: .75rem; }
+.workspace-report section { border-top: 1px solid #525252; padding-top: 1rem; }
+@media print { .workspace-report button, .workspace-report > a, .cds--header { display: none; } .workspace-report { color: black; background: white; } }
